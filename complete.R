@@ -14,6 +14,7 @@ complete <- function(directory, id= 1:332) {
   for (i in id){
     current_file <- read.csv(file_paths[i],header=TRUE,sep=",")
     complete_data[j]<-sum(complete.cases(current_file))
+    #number of lines without NA
     j<-j+1
   }
   result<-data.frame(id=id,nobs=complete_data)
